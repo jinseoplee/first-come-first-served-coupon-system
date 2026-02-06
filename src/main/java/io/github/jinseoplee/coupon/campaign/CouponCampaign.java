@@ -28,4 +28,13 @@ public class CouponCampaign {
 
     @Column(nullable = false)
     private LocalDateTime updatedAt;
+
+    public static CouponCampaign of(int issueLimit) {
+        CouponCampaign campaign = new CouponCampaign();
+        campaign.issueLimit = issueLimit;
+        campaign.issuedCount = 0;
+        campaign.createdAt = LocalDateTime.now();
+        campaign.updatedAt = LocalDateTime.now();
+        return campaign;
+    }
 }

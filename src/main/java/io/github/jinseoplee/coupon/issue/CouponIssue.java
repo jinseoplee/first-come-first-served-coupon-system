@@ -38,4 +38,12 @@ public class CouponIssue {
 
     @Column(nullable = false, updatable = false)
     private LocalDateTime issuedAt;
+
+    public static CouponIssue of(CouponCampaign campaign, Long userId) {
+        CouponIssue issue = new CouponIssue();
+        issue.couponCampaign = campaign;
+        issue.userId = userId;
+        issue.issuedAt = LocalDateTime.now();
+        return issue;
+    }
 }
