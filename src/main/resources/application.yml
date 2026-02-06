@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: first-come-first-served-coupon-system
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
